@@ -25,8 +25,8 @@ class DateAndTime {
     cal.getTime.getTime()
   }
 
-  //格式化时间 转化 为时间戳，时间格式yyyy-MM-dd HH:mm:ss
-  def tranFomatTimeToStamp(tm:String) :Long={
+  //格式化时间 转化为 时间戳，时间格式yyyy-MM-dd HH:mm:ss
+  def tranFormatTimeToStamp(tm:String) :Long={
     val fm = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss")
     //dt = Fri Apr 12 23:37:00 CST 2019
     val dt = fm.parse(tm)
@@ -35,12 +35,12 @@ class DateAndTime {
     stamp
   }
 
-  //获取当前日期yyyyMMdd
-  def getTime():String={
-    val now:Date = new Date()
-    val dateFormat:SimpleDateFormat = new SimpleDateFormat("yyyyMMdd-S")
-    val nowDate = dateFormat.format( now )
-    nowDate
+  //时间戳 转化为 格式化时间
+  def tranTimeStampToFormatTime(time_stamp:String):String={
+    val time_string = new Date(time_stamp.toLong)
+    val dateFormat:SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:MM:ss")
+    val format_time = dateFormat.format( time_string )
+    format_time
   }
 
 
@@ -49,10 +49,10 @@ class DateAndTime {
     val df:SimpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
     cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY)
     //获取本周一的日期
-    //periodFomat=2019-04-22
-    val periodFomat=df.format(cal.getTime())
+    //periodFormat=2019-04-22
+    val periodFormat=df.format(cal.getTime())
     //periodString=Mon Apr 22 00:00:00 CST 2019
-    val periodString = df.parse(periodFomat)
+    val periodString = df.parse(periodFormat)
 
     periodString
   }
