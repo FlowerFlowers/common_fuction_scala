@@ -44,7 +44,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.path.to.main.Class</mainClass>
+                            <mainClass>main.scala</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
