@@ -115,4 +115,12 @@ val DST_OFFSET: Int = 16
     //Sat Apr 06 11:39:06 CST 2019
     println(calendar.getTime())
   }
+
+  def run()={
+    //test DateAndTime
+    val datetime = new DateAndTime()
+    println(datetime.tranFormatTimeToStamp("2019-04-12 23:37:00"))
+    val time_stamp = "1555083420861"
+    println(datetime.tranTimeStampToFormatTime(time_stamp))
+  }
 }

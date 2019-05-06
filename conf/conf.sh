@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #设置hdfs上的路径
-path_pre="/user/vc/projects_prod/Comet/"
+path_pre="/user/vc/users/wyj/test/"
 
 # 公共的配置文件
 kinit -k -t /home/vc/client-vc.keytab vc/vc@guoyu.com
@@ -19,7 +19,7 @@ function spark_submit {
     executor_cores=$4
     job=$5
     $spark_home/bin/spark-submit \
-      --class main \
+      --class ExecuterMain  \
       --master yarn \
       --executor-memory $executor_memory \
       --driver-memory   $driver_memory \
