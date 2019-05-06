@@ -24,8 +24,7 @@ class WindowFunction {
       ("6", "s3", "2017-05-01", 100),
       ("6", "s3", "2017-05-02", 50)
     ).toDF("order_id", "seller_id", "order_date", "price")
-    val windowtest = new WindowFunction()
-    windowtest.getIncreaseIndex(orders)
+
   }
 
 }
