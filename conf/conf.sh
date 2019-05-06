@@ -10,7 +10,7 @@ spark_home="$SPARK_HOME"
 
 HADOOP_HOME=/data/guoyu/hadoop/
 hadoop_bin="$HADOOP_HOME/bin/hadoop"
-jar_file="target/ common_function_scala-1.1.0-SNAPSHOT-jar-with-dependencies.jar"
+jar_file="target/common_function_scala-1.1.0-SNAPSHOT-jar-with-dependencies.jar"
 #spark_submit是spark部署工具
 function spark_submit {
     executor_memory=$1
