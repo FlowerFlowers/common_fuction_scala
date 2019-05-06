@@ -44,7 +44,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>Main</mainClass>
+                            <mainClass>process.ExecuterMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
