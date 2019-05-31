@@ -30,6 +30,14 @@ class PivotAndUnpivot {
     df_pivot
   }
 
+  def unpivotDF(df:DataFrame)={
+    //selectExpr 是select的拓展，中间的列可以使用sql表达式
+    //stack(n, expr1, ..., exprk)  是把后续的东西分割成n行
+    val df_stack = df.selectExpr("`年月`","stack(4, '项目1', `项目1`,'项目2', `项目2`, '项目3', `项目3`, '项目x', `项目x`) as (`项目`,`收入`)")
+      .filter("`收入` > 0 ")
+    df_stack
+  }
+
   def run()={
     val df = createDF()
     print("原始的dataframe如下：")
@@ -37,5 +45,7 @@ class PivotAndUnpivot {
     val df_pivot = pivotDF()
     print("按照'年月'分组，对'项目'透视，对'收入'求和的结果如下：")
     df_pivot.show()
+
+
   }
 }
