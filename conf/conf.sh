@@ -19,7 +19,8 @@ function spark_submit {
     executor_cores=$4
     job=$5
     $spark_home/bin/spark-submit \
-      --class ExecuterMain  \
+      --class process.ExecuterMain \
+      --master yarn \
       --master yarn \
       --executor-memory $executor_memory \
       --driver-memory   $driver_memory \
