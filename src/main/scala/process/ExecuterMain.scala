@@ -15,7 +15,9 @@ object ExecuterMain {
       case "date_and_time" =>
         val date_and_time = new DateAndTime()
         date_and_time.run()
-
+      case "pivot_and_unpivot" =>
+        val pivot_and_unpivot = new  PivotAndUnpivot()
+        pivot_and_unpivot .run()
 
     }
 
